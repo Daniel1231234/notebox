@@ -38,12 +38,12 @@ async function checkIfHas24HoursPassed(req, res) {
       return;
     }
 
-    let currentTimeStamp = Date.now();
-    let timeDifference = currentTimeStamp - +note.seenAt;
-    var hoursDifference = timeDifference / (1000 * 60 * 60);
-    if (hoursDifference >= 24) {
-      res.status(200).send({ message: "OK" });
-    } else res.status(200).send({ message: "NOT OK" });
+    // let currentTimeStamp = Date.now();
+    // let timeDifference = currentTimeStamp - +note.seenAt;
+    // var hoursDifference = timeDifference / (1000 * 60 * 60);
+    res.status(200).send({ message: "OK" });
+    // if (hoursDifference >= 24) {
+    // } else res.status(200).send({ message: "NOT OK" });
   } catch (err) {
     console.log("Cannot check id 24 hours passed", err);
     res.status(500).send({ err: "Failed to check id 24 hours passed" });
